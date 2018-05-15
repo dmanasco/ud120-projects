@@ -3,6 +3,7 @@
 import sys
 import pickle
 sys.path.append("../tools/")
+sys.path.append("/Users/davidmanasco/anaconda/lib/python3.5/site-packages/")
 
 from feature_format import featureFormat, targetFeatureSplit
 from tester import dump_classifier_and_data
@@ -34,7 +35,7 @@ labels, features = targetFeatureSplit(data)
 # Provided to give you a starting point. Try a variety of classifiers.
 from sklearn.naive_bayes import GaussianNB
 clf = GaussianNB()
-
+clf.train(features, labels)
 ### Task 5: Tune your classifier to achieve better than .3 precision and recall 
 ### using our testing script. Check the tester.py script in the final project
 ### folder for details on the evaluation method, especially the test_classifier
